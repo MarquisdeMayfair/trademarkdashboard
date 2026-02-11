@@ -91,11 +91,14 @@ code {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 8px 0 20px;
+  padding: 14px 0;
   position: sticky;
   top: 0;
-  z-index: 10;
-  backdrop-filter: blur(10px);
+  z-index: 20;
+  background: rgba(246, 241, 232, 0.94);
+  border-bottom: 1px solid rgba(23, 19, 15, 0.08);
+  box-shadow: 0 10px 30px rgba(23, 19, 15, 0.06);
+  backdrop-filter: blur(6px);
 }
 
 .logo {
