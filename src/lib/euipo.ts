@@ -10,7 +10,10 @@ const CLIENT_SECRET =
 const AUTH_URL = process.env.EUIPO_AUTH_URL || DEFAULT_AUTH_URL;
 const API_BASE = process.env.EUIPO_API_BASE || DEFAULT_API_BASE;
 
-if (!CLIENT_ID || !CLIENT_SECRET) {
+const clientId = CLIENT_ID ?? "";
+const clientSecret = CLIENT_SECRET ?? "";
+
+if (!clientId || !clientSecret) {
   throw new Error(
     "EUIPO_CLIENT_ID/EUIPO_CLIENT_SECRET (or TRADEMARK_DASHBOARD_CLIENT_ID/TRADEMARK_DASHBOARD_CLIENT_SECRET) must be set in .env.local",
   );
@@ -29,8 +32,8 @@ declare global {
 async function fetchAccessToken(): Promise<TokenCache> {
   const body = new URLSearchParams({
     grant_type: "client_credentials",
-    client_id: CLIENT_ID,
-    client_secret: CLIENT_SECRET,
+    client_id: clientId,
+    client_secret: clientSecret,
   });
 
   const response = await fetch(AUTH_URL, {
@@ -84,7 +87,7 @@ export async function euipoGet(
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
-      "X-IBM-Client-Id": CLIENT_ID,
+      "X-IBM-Client-Id": clientId,
     },
     cache: "no-store",
   });
