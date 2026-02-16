@@ -1624,3 +1624,319 @@ code {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ================================================================
+   COMING SOON / WAITLIST PAGE
+   ================================================================ */
+
+.cs {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cs::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.cs::after {
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  left: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.07) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* Header */
+.cs-header {
+  width: 100%;
+  max-width: 900px;
+  padding: 32px 24px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs-logo .logo-title {
+  color: #fff;
+}
+
+.cs-logo .logo-sub {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Hero */
+.cs-hero {
+  max-width: 900px;
+  padding: 64px 24px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--brand-light);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.cs-hero h1 {
+  font-family: var(--font-heading), "Space Grotesk", sans-serif;
+  font-size: clamp(2.2rem, 1.8rem + 2.5vw, 3.6rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.cs-lead {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Advantages */
+.cs-advantages {
+  max-width: 960px;
+  padding: 72px 24px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-advantages h2 {
+  font-family: var(--font-heading), "Space Grotesk", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cs-grid .cs-card:nth-child(4),
+.cs-grid .cs-card:nth-child(5) {
+  grid-column: span 1;
+}
+
+.cs-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.cs-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(59, 130, 246, 0.2);
+  transform: translateY(-3px);
+}
+
+.cs-icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.cs-card h3 {
+  font-family: var(--font-heading), "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.cs-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+}
+
+/* Waitlist form */
+.cs-waitlist {
+  max-width: 560px;
+  padding: 72px 24px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-waitlist h2 {
+  font-family: var(--font-heading), "Space Grotesk", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.cs-waitlist > p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.cs-form {
+  display: flex;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 5px;
+  transition: border-color 0.2s;
+}
+
+.cs-form:focus-within {
+  border-color: var(--brand-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.cs-form input {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  min-width: 0;
+}
+
+.cs-form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.cs-form button {
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.cs-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+.cs-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cs-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 24px;
+  border-radius: var(--radius);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: var(--success);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cs-success-icon {
+  font-size: 1.2rem;
+}
+
+.cs-error {
+  margin-top: 14px;
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.cs-note {
+  margin-top: 14px;
+  color: var(--accent-light);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.cs-footer {
+  margin-top: auto;
+  padding: 48px 24px 32px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive coming-soon */
+@media (max-width: 768px) {
+  .cs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-form {
+    flex-direction: column;
+  }
+
+  .cs-form button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cs-hero {
+    padding-top: 40px;
+  }
+
+  .cs-advantages {
+    padding-top: 48px;
+  }
+
+  .cs-waitlist {
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-hero h1 {
+    font-size: 1.8rem;
+  }
+}

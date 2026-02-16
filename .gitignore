@@ -33,9 +33,20 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# waitlist database
+waitlist.db
+waitlist.db-wal
+waitlist.db-shm
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local docs & assets
+logo large 1.png
+openapi (1).json
+trademarkdashboard-commercial-plan.html
+trademarkdashboard-opportunity-analysis.html

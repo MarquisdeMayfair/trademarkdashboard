@@ -165,7 +165,7 @@ export default function RegisterTrademarkUKPage() {
 
           <h2>Step 6: Publication and opposition period</h2>
           <p>
-            Once accepted, your mark is published in the Trade Marks Journal for
+            Once accepted, your mark is published for
             a <strong>2-month opposition period</strong>. Any third party can
             oppose your registration during this time. Most applications pass
             through without opposition.
