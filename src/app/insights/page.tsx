@@ -1,39 +1,20 @@
 import Link from "next/link";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const bars = [22, 46, 64, 78, 58, 82, 50];
 
 export default function InsightsPage() {
   return (
     <div className="page">
-      <header className="nav container">
-        <Link className="logo" href="/">
-          <span className="logo-mark">TA</span>
-          <div>
-            <span className="logo-title">Trademark Dashboard</span>
-            <span className="logo-sub">EU trademark data portal</span>
-          </div>
-        </Link>
-        <nav className="nav-links">
-          <Link href="/insights">Insights</Link>
-          <Link href="/search">Search</Link>
-          <Link href="/#classes">Classes</Link>
-        </nav>
-        <div className="nav-actions">
-          <Link className="btn ghost" href="/">
-            Back home
-          </Link>
-          <Link className="btn primary" href="/#apply">
-            Apply for EU trademark
-          </Link>
-        </div>
-      </header>
+      <Nav />
 
       <main className="container">
         <section className="section">
-          <h2>EU filing insights (sample)</h2>
+          <h2>Trademark filing insights</h2>
           <p className="subhead">
-            This dashboard will be driven by EUIPO API data once the key is
-            active. Current visuals are placeholders for layout.
+            AI-powered analytics on trademark filing trends across UK IPO,
+            EUIPO, and USPTO. Current visuals are placeholders for layout.
           </p>
 
           <div className="insight-grid">
@@ -94,6 +75,8 @@ export default function InsightsPage() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }

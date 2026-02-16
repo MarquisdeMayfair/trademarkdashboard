@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 type TrademarkItem = {
   applicationNumber: string;
@@ -189,35 +191,14 @@ export default function SearchPage() {
 
   return (
     <div className="page">
-      <header className="nav container">
-        <Link className="logo" href="/">
-          <span className="logo-mark">TA</span>
-          <div>
-            <span className="logo-title">Trademark Dashboard</span>
-            <span className="logo-sub">EU trademark data portal</span>
-          </div>
-        </Link>
-        <nav className="nav-links">
-          <Link href="/insights">Insights</Link>
-          <Link href="/search">Search</Link>
-          <Link href="/#tools">Tools</Link>
-        </nav>
-        <div className="nav-actions">
-          <Link className="btn ghost" href="/">
-            Back home
-          </Link>
-          <Link className="btn primary" href="/#apply">
-            Apply for EU trademark
-          </Link>
-        </div>
-      </header>
+      <Nav />
 
       <main className="container">
         <section className="section">
-          <h2>Trademark search (EUIPO Sandbox)</h2>
+          <h2>AI-Powered Trademark Search</h2>
           <p className="subhead">
-            Search the EUIPO sandbox dataset with RSQL-powered filters. Use the
-            advanced query field if you need precision beyond the basic inputs.
+            Search UK, EU, and US trademark registers with AI-powered filters.
+            Use the advanced query field if you need precision beyond the basic inputs.
           </p>
 
           <div className="search-card">
@@ -349,7 +330,7 @@ export default function SearchPage() {
                       <span>Status: {result.status}</span>
                       <span>Classes: {classes}</span>
                     </div>
-                    <Link className="btn ghost" href="/#apply">
+                    <Link className="btn ghost" href="/tools/name-risk-scanner">
                       Assess filing risk
                     </Link>
                   </article>
@@ -380,6 +361,8 @@ export default function SearchPage() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
